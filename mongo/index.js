@@ -4,6 +4,9 @@ const app = express();
 const smartPole = require('./models/smartPole');
 require("dotenv").config({ path: "./config.env" });
 
+// User: superAdmin, pwd: 1234
+// User: natchapon, pwd: 1234
+
 const port = process.env.PORT || 3001;
 const db = process.env.MONGO_URI;
 const option = {
@@ -23,6 +26,7 @@ app.get("/api/get/", async (req, res, next) => {
 })
 
 app.post("/api/add", async (req, res, next) => {
+    console.log("add data!!!!")
     const data = {
         id: req.body.id,
         deviceStatus: req.body.deviceStatus
