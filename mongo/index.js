@@ -39,3 +39,26 @@ app.post("/api/add", async (req, res, next) => {
 app.listen(port, () => {
     console.log('Application is running on port ' + port);
 });
+
+//========================================
+// const express = require('express');
+// const { MongoClient } = require("mongodb");
+// const app = express();
+// const smartPole = require('./models/smartPole');
+// require("dotenv").config({ path: "./config.env" });
+// const port = process.env.PORT || 3001;
+
+// app.post("/api/add", async (req, res, next) => {
+//     const client = new MongoClient(process.env.MONGO_URI2);
+//     await client.connect();
+//     await client.db('iot').collection('smartpoles').insertOne({
+//         id: req.body.id,
+//         deviceStatus: req.body.deviceStatus
+//     })
+//     await client.close();
+//     res.status(200).send("ADD DATA COMPLETE");
+// })
+
+// app.listen(port, () => {
+//     console.log('Application is running on port ' + port);
+// });
