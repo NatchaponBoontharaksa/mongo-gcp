@@ -28,7 +28,7 @@ app.get("/api/get/", async (req, res, next) => {
 app.post("/api/add", async (req, res, next) => {
     console.log("add data!!!!")
     const data = {
-        id: req.body.id,
+        id: req.params.id,
         deviceStatus: req.body.deviceStatus
     }
     console.log(data.id, data.deviceStatus);
