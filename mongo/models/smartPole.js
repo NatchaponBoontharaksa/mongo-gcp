@@ -4,16 +4,8 @@ const mongoose = require('mongoose');
 {
     _id,
     Token: String,                  - Token that generate from webserver
-    date: {
-        day: Number,
-        month: Number,
-        year: Number                
-    },
-    time: {
-        hour: Number,               - Hour
-        min: Number,                - Minute
-        sec: Number                 - Second
-    },
+    date: String,                   - DDMMYYYY
+    time: String,                   - HHMMSS
     deviceInfo: {
         deviceId: String,           - Maybe IMEI of NB-IoT device
         deviceStatus: Boolean,      - Status of system (Healthy, Unhealthy)
