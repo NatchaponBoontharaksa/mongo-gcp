@@ -3,30 +3,30 @@ const mongoose = require('mongoose');
 /*
 {
     _id,
-    Token: String,
+    Token: String,                  - Token that generate from webserver
     date: {
         day: Number,
         month: Number,
-        year: Number
+        year: Number                
     },
     time: {
-        hour: Number,
-        min: Number,
-        sec: Number
+        hour: Number,               - Hour
+        min: Number,                - Minute
+        sec: Number                 - Second
     },
     deviceInfo: {
-        deviceId: String,
-        deviceStatus: Boolean,
-        deviceSignal: String,
+        deviceId: String,           - Maybe IMEI of NB-IoT device
+        deviceStatus: Boolean,      - Status of system (Healthy, Unhealthy)
+        deviceSignal: String,       - signal status (dBm)
     },
     sensorInfo: {
-        powerConsumption: Number,
-        batteryVoltage: Number,
-        batteryCurrent: Number,
-        solarVoltage: Number,
-        solarCurrent: Number,
-        lightValue: Number,
-        location: [Number, Number]
+        powerConsumption: Number,   - power consumption of system
+        batteryVoltage: Number,     - battery remain
+        batteryCurrent: Number,     - battery current load
+        solarVoltage: Number,       - Voltage output from solar cell
+        solarCurrent: Number,       - Currect output from solar cell
+        lightValue: Number,         - brightness from LED
+        location: [Number, Number]  - Longtitude and Latitude
     }
 }
 */
