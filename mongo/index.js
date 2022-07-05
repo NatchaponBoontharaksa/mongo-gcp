@@ -40,6 +40,11 @@ app.post("/api/add", async (req, res, next) => {
     res.send(result);
 })
 
+app.get("/api/getTime/", async (req, res, next) => {
+    const date = new Date()
+    res.send(date.toLocaleString());
+})
+
 app.listen(port, () => {
     console.log('Application is running on port ' + port);
 });
