@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
     Token: String,                  - Token that generate from webserver
     date: String,                   - DDMMYYYY
     time: String,                   - HHMMSS
+    MessageCount: Number,           - Number of message that send to server
     deviceInfo: {
         deviceId: String,           - Maybe IMEI of NB-IoT device
         deviceStatus: Boolean,      - Status of system (Healthy, Unhealthy)
