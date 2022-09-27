@@ -8,7 +8,7 @@ require("dotenv").config({ path: "./config.env" });
 // User: natchapon, pwd: 1234
 
 const port = process.env.PORT || 3001;
-const db = process.env.MONGO_URI;
+const db = process.env.MONGO_URI2;
 const option = {
     user: process.env.MONGO_USERNAME,
     pass: process.env.MONGO_PWD
@@ -28,16 +28,18 @@ app.get("/api/get/", async (req, res, next) => {
 app.post("/api/add", async (req, res, next) => {
     console.log("add data!!!!")
     const data = {
-        id: req.body.id,
-        deviceStatus: req.body.deviceStatus
+        rssi: req.body.rssi,
+        payload: req.body.payload
     }
-    console.log(data.id, data.deviceStatus);
+    console.log(data.rssi, data.payload);
+    // extract data from gateway
+    
     const result = new smartPole({
-        id: data.id,
-        deviceStatus: data.deviceStatus
+        rssi: data.rssi,
+        payload: data.payload
     });
     await result.save();
-    res.send(result);
+    res.send(req.body);
 })
 
 app.get("/api/getTime/", async (req, res, next) => {
